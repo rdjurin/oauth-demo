@@ -1,0 +1,71 @@
+spring:
+  thymeleaf:
+    cache: false
+  security:
+    oauth2:
+      client:
+        registration:
+          demo:
+            client-id: demo
+            redirectUri: http://localhost:8080/login/oauth2/code/
+            client-authentication-method: 'private_key_jwt'
+            authorization-grant-type: authorization_code
+            scopes:
+              - openid
+        provider:
+          demo:
+            token-uri: http://localhost:8082/auth/realms/test/protocol/openid-connect/token
+            authorization-uri: http://localhost:8082/auth/realms/test/protocol/openid-connect/auth
+            user-info-uri: http://localhost:8082/auth/realms/test/protocol/openid-connect/userinfo
+            user-name-attribute: name
+            jwkSetUri: http://localhost:8082/auth/realms/test/protocol/openid-connect/certs
+            issuer-uri: http://localhost:8082/auth/realms/test
+
+jwk:
+  private: |
+    -----BEGIN PRIVATE KEY-----
+    MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDS4Q8q+fyi1aUV
+    kgJYOKDDEQXVOfpCQ/upJdl/z9fUkJD4/41exiPMonAt9lSvEMYHvrc5jqZ+xTF1
+    2TjSSUVuVu2gEnCZft0oMIpVwx0r+ao6aOfDQdMQPRjC20OLmw1Rf7XMoRC4jiEz
+    Vq9rcqCX7jPfGhKCLOkunIX+0HtKEDWB2FgvPY3FXPrL1uG0oKNVRSHyCjQiqguf
+    isgHn24Z3Og4TKJXjxZF91ZkRvMaTfaKjflrc0KRl8mwI36x6Y54INkwjB80COS7
+    pEg5XoGmWHF5GhBHrn2E8moVihssj0MfjXPZFf0YtJQjuM2rQ2qId4vPyPNANarm
+    TvkbBa5BAgMBAAECggEAERvLRDxV38wfgZl/8TJe8JR/+aWjhR7I2xdEBxeQtiEo
+    cdsh2A+RNffzy/bRNgbRWi2B5fyJy30qHxqJfp4NMP+CddspIXrmbG1Lu9uBkWDH
+    C8gZDYFYo1ehm6V4XGou8W7ADCMBHUgCr4yX3MrG9qyPrskJuV/1Zx+xy1OUvRRf
+    xo18vYFoZgttr7H1oWJ7AKsbXNRst43BpgIUPQ3eNiE2defABsOZ3nnFl3WSPUU+
+    hKfVyAZpb+ChGu0gOABHa2zP1Dlo7KnA/yIg6t8n2PLPe04xV4u+ykqeMjIBFTPf
+    JUnSec1AfLn37YdWa+xsR+VrdtqbBhy80ILZ198EAQKBgQD5p7HjwXG6f7IrZ2Ir
+    saepnfLQBEnKV0AR4WV84TROY2X4lLjkn6Syz29uvGU2UT6F8e8juUp0X32aD5nT
+    /4GkT2EDOvWyqUNaHzYWbMpl7RacfflqMKMEAfYqYMakmOGAolONNcKHXtuFlldG
+    36C2d+vvNbO6bSiVz7BM439c4QKBgQDYPRSgSqQ0XR+UpYUpZ4wYbVBL3Xzurr5R
+    9dE3WuTgQSgvxASyw6IjCbwkQyZECgk9LfTzEpblfDKxpYiyZPX6QTJ2btwJvXAx
+    QTuvdsa5i8Y3fC2qY0IOxFmVUj6DwmJLv/XInLHc9ISGzPiRR24d1Ed3Oe3X3nk5
+    nswCs/4dYQKBgQCARep/1F/j7EKWTItDWgeEfhRJTzq+zS+tQDtN+8RNVoMJQxjw
+    1xnfifd+VSxHyVyvo8w0dbrMqle1tbhbFdf9nY+CAmRFhPSHNKwsv38K+dN5Wryx
+    FAZeQ8fApHLMFYUf+8ekMXAe790o+UMktjg0KM+/277Z1cZZmxnBl85T4QKBgHW4
+    8yS83h5/4DSN1CwRamzV/lP/FgffbE+0kx0ex+HqtxUiEyi7ZubKYvoe8JM0H4mG
+    HofCxBHVhse+BeiRHHUMz4s4mWRYFN9L01GYSWI0XUpRuY68kPb3IIoxh0U2K0tw
+    C0AXRqGzIP8+UcjN6X4l1m5rRDg0ryyWbhy+nwahAoGADGomCBQ7AbTPOyIfClFq
+    LJNUDJhqmRb44wsBlcVJFYU1ZaLUGMbe09WEZdDE9eCQlUaPseFq5ZOlzzwndIBQ
+    8hYshWWl9iOAebIxz4tcH5+m/Rp2M8vov8Ec3n4HBb9tXT/wdcZNfXNGgvlDCElK
+    Me5ibNpTCv8+4/N74aXImjk=
+    -----END PRIVATE KEY-----
+  public: |
+    -----BEGIN PUBLIC KEY-----
+    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0uEPKvn8otWlFZICWDig
+    wxEF1Tn6QkP7qSXZf8/X1JCQ+P+NXsYjzKJwLfZUrxDGB763OY6mfsUxddk40klF
+    blbtoBJwmX7dKDCKVcMdK/mqOmjnw0HTED0YwttDi5sNUX+1zKEQuI4hM1ava3Kg
+    l+4z3xoSgizpLpyF/tB7ShA1gdhYLz2NxVz6y9bhtKCjVUUh8go0IqoLn4rIB59u
+    GdzoOEyiV48WRfdWZEbzGk32io35a3NCkZfJsCN+semOeCDZMIwfNAjku6RIOV6B
+    plhxeRoQR659hPJqFYobLI9DH41z2RX9GLSUI7jNq0NqiHeLz8jzQDWq5k75GwWu
+    QQIDAQAB
+    -----END PUBLIC KEY-----
+
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.security: DEBUG
+    org.springframework.security.oauth2: DEBUG
