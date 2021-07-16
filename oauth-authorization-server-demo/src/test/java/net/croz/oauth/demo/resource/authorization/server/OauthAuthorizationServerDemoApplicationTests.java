@@ -1,10 +1,10 @@
-package net.croz.oauth.demo;
+package net.croz.oauth.demo.resource.authorization.server;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ApplicationTests {
+class OauthAuthorizationServerDemoApplicationTests {
 
     @Test
     void contextLoads() {

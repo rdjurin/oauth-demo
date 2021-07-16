@@ -1,4 +1,4 @@
-package net.croz.oauth.demo.authorization.server;
+package net.croz.oauth.demo.resource.authorization.server;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -37,6 +37,6 @@ public class SecurityConfig {
                 .authorities("DEMO", "ADMIN")
                 .build();
 
-        return new InMemoryUserDetailsManager(user);
+        return new InMemoryUserDetailsManager(user, user2);
     }
 }

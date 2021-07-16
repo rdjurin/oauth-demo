@@ -109,6 +109,12 @@ Application serves public and secured page:
  * `http://localhost:8080/` - public page not requires authentication
  * `http://localhost:8080/secured` - secured page which requires authentication through oAuth
 
+
+To login use one of users:
+
+ * admin/password
+ * test/password
+
 ### 2.2 Exposing public keys
 
 JWK set is exposed through api: `http://localhost:8080/api/jwks`
