@@ -1,30 +1,22 @@
-server:
-  port: 8081
-  servlet:
-    session:
-      cookie:
-        name: ASSESSIONID
 logging:
   level:
     root: INFO
-    org.springframework.web: INFO
-    org.springframework.security: DEBUG
-    org.springframework.security.oauth2: DEBUG
+    net.croz.oauth: DEBUG
 
 oauth:
-  issuer: 'http://localhost:8080/oauth'
-  login-redirect-uri: 'http://localhost:8080/login?redirectUri=%s'
+  issuer: 'http://test.oauth/oauth'
+  login-redirect-uri: 'http://login.oauth/login?redirectUri=%s'
   clients:
-    keycloak-client:
-      client-id: 'keycloak-client'
+    test-client:
+      client-id: 'test-client'
       authorization-code-lifetime: 60
-      access-token-lifetime: 600
+      access-token-lifetime: 360
       redirect-uris:
-        - 'http://localhost:8082/auth/realms/test/broker/demo-authorization-server/endpoint'
-      scopes: ['openid']
+        - 'https://test.redirect.uri/test'
+      scopes: ['openid', 'test']
       pkceMethod: S256
   jwk:
-    key-id: 'demo-server'
+    key-id: 'test-server'
     algorithm: 'RS512'
     private-key: |
       -----BEGIN PRIVATE KEY-----

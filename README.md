@@ -96,8 +96,9 @@ This setup that this provider is called imediately without keycloak login page a
 
 ```shell
 openssl genrsa -des3 -out client.rsa.pem 2048
-openssl rsa -in client.private.pem -outform PEM -pubout -out client.public.pem
 openssl pkcs8 -in client.rsa.pem -out client.private.pem -nocrypt -topk8
+openssl rsa -in client.private.pem -outform PEM -pubout -out client.public.pem
+
 ```
 
 ## 2. Resource server application

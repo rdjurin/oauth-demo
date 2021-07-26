@@ -1,4 +1,4 @@
-package net.croz.oauth.demo.resource.util;
+package net.croz.oauth.demo.authorization.server.oauth.util;
 
 
 import java.security.KeyFactory;

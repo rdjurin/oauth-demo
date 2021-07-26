@@ -1,10 +1,10 @@
-package net.croz.oauth.demo.resource;
+package net.croz.oauth.demo;
 
 import com.nimbusds.jose.JWSAlgorithm;
 import com.nimbusds.jose.jwk.JWK;
 import com.nimbusds.jose.jwk.KeyUse;
 import com.nimbusds.jose.jwk.RSAKey;
-import net.croz.oauth.demo.resource.util.RSAUtil;
+import net.croz.oauth.demo.util.RSAUtil;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

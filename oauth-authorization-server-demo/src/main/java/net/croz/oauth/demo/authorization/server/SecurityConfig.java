@@ -1,4 +1,4 @@
-package net.croz.oauth.demo.resource.authorization.server;
+package net.croz.oauth.demo.authorization.server;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -16,10 +16,14 @@ public class SecurityConfig {
 
     @Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
-        return http.authorizeRequests()
+        return http
+                .authorizeRequests()
+                .antMatchers("/oauth/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin(withDefaults())
+                .csrf().ignoringAntMatchers("/oauth/**")
+                .and()
                 .build();
     }
 

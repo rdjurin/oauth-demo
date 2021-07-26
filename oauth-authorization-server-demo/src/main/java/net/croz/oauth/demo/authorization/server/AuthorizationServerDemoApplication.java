@@ -1,7 +1,8 @@
-package net.croz.oauth.demo.resource.authorization.server;
+package net.croz.oauth.demo.authorization.server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @SpringBootApplication
 public class AuthorizationServerDemoApplication {

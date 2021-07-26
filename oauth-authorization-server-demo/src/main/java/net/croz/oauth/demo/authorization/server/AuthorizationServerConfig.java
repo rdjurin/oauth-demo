@@ -1,4 +1,4 @@
-package net.croz.oauth.demo.resource.authorization.server;
+package net.croz.oauth.demo.authorization.server;
 
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;
