@@ -1,4 +1,4 @@
-package net.croz.oauth.demo.authorization.server.oauth.config;
+package net.croz.oauth.demo.authorization.server.oauth2.config;
 
 import lombok.*;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -11,8 +11,8 @@ import java.util.Set;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@ConfigurationProperties(prefix = "oauth")
-public class OAuthProperties {
+@ConfigurationProperties(prefix = "oauth2")
+public class OAuth2Properties {
 
     private String issuer;
     private Map<String, OAuthClient> clients;

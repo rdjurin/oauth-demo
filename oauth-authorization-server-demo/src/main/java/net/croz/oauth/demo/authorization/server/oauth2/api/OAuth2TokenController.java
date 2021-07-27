@@ -1,4 +1,4 @@
-package net.croz.oauth.demo.authorization.server.endpoint;
+package net.croz.oauth.demo.authorization.server.oauth2.api;
 
 import com.nimbusds.jose.JOSEException;
 import com.nimbusds.jose.JWSAlgorithm;
@@ -13,9 +13,9 @@ import com.nimbusds.oauth2.sdk.token.AccessToken;
 import com.nimbusds.oauth2.sdk.token.BearerAccessToken;
 import com.nimbusds.openid.connect.sdk.OIDCTokenResponse;
 import com.nimbusds.openid.connect.sdk.token.OIDCTokens;
-import net.croz.oauth.demo.authorization.server.oauth.config.OAuthKeys;
-import net.croz.oauth.demo.authorization.server.service.OAuthSession;
-import net.croz.oauth.demo.authorization.server.service.OAuthSessionService;
+import net.croz.oauth.demo.authorization.server.oauth2.config.OAuth2Keys;
+import net.croz.oauth.demo.authorization.server.oauth2.model.OAuth2Session;
+import net.croz.oauth.demo.authorization.server.oauth2.service.OAuth2SessionService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,13 +30,13 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("/oauth/token")
-public class TokenController {
+public class OAuth2TokenController {
 
-    private final OAuthKeys keys;
+    private final OAuth2Keys keys;
 
-    private final OAuthSessionService sessionService;
+    private final OAuth2SessionService sessionService;
 
-    public TokenController(OAuthKeys keys, OAuthSessionService sessionService) {
+    public OAuth2TokenController(OAuth2Keys keys, OAuth2SessionService sessionService) {
         this.keys = keys;
         this.sessionService = sessionService;
     }
@@ -47,7 +47,7 @@ public class TokenController {
         Map<String, String[]> parameters = request.getParameterMap();
 
         String code = request.getParameter("code");
-        OAuthSession session = sessionService.findByAuthorizationCode(code);
+        OAuth2Session session = sessionService.findByAuthorizationCode(code);
 
         if (session == null) {
             throw new RuntimeException("Session is not exists for authorization code");

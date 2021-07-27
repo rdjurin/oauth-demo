@@ -3,7 +3,12 @@ logging:
     root: INFO
     net.croz.oauth: DEBUG
 
-oauth:
+togglz:
+  enabled: true
+  features:
+    OAUTH2.enabled: true
+
+oauth2:
   issuer: 'http://test.oauth/oauth'
   login-redirect-uri: 'http://login.oauth/login?redirectUri=%s'
   clients:
@@ -15,6 +20,10 @@ oauth:
         - 'https://test.redirect.uri/test'
       scopes: ['openid', 'test']
       pkceMethod: S256
+      jwksUrl: 'http://client/jwks'
+
+
+
   jwk:
     key-id: 'test-server'
     algorithm: 'RS512'

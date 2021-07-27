@@ -1,4 +1,4 @@
-package net.croz.oauth.demo.authorization.server.service;
+package net.croz.oauth.demo.authorization.server.oauth2.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,11 +11,11 @@ import java.time.Instant;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class OAuthSession {
+public class OAuth2Session {
 
     public enum Status {
-        PENDING, //authorization code issued
-        VALID, // tokens issued
+        AUTHORIZATION_CODE_ISSUED, //authorization code issued
+        ACCESS_TOKEN_ISSUED, // tokens issued
         INVALID // session closed or expired
     }
 

@@ -1,4 +1,4 @@
-package net.croz.oauth.demo.authorization.server.oauth.exception;
+package net.croz.oauth.demo.authorization.server.oauth2.exception;
 
 public class UserNotAuthenticatedException extends Exception {
 

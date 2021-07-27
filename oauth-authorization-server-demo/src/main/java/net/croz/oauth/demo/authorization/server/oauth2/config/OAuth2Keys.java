@@ -1,4 +1,4 @@
-package net.croz.oauth.demo.authorization.server.oauth.config;
+package net.croz.oauth.demo.authorization.server.oauth2.config;
 
 import lombok.Builder;
 import lombok.Value;
@@ -8,7 +8,7 @@ import java.security.interfaces.RSAPublicKey;
 
 @Value
 @Builder
-public class OAuthKeys {
+public class OAuth2Keys {
 
     private final String keyId;
     private final String algorithm;

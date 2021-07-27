@@ -1,4 +1,4 @@
-package net.croz.oauth.demo.authorization.server.oauth.model;
+package net.croz.oauth.demo.authorization.server.oauth2.model;
 
 /**
  * OAuth2 error types based on RFC6749: <link>https://datatracker.ietf.org/doc/html/rfc6749#section-4.1.2.1</link>

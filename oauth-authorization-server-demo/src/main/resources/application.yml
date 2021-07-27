@@ -11,7 +11,20 @@ logging:
     org.springframework.security: DEBUG
     org.springframework.security.oauth2: DEBUG
 
-oauth:
+
+
+togglz:
+  enabled: true
+  features:
+    OAUTH2.enabled: false
+  console:
+    use-management-port: false
+    enabled: true
+    secured: false
+
+
+
+oauth2:
   issuer: 'http://localhost:8080/oauth'
   login-redirect-uri: 'http://localhost:8080/login?redirectUri=%s'
   clients:
@@ -23,6 +36,7 @@ oauth:
         - 'http://localhost:8082/auth/realms/test/broker/demo-authorization-server/endpoint'
       scopes: ['openid']
       pkceMethod: S256
+      jwksUrl: 'http://client/jwks'
   jwk:
     key-id: 'demo-server'
     algorithm: 'RS512'
